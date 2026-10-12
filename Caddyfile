@@ -1,0 +1,6 @@
+# Caddy obtains and renews a Let's Encrypt certificate for {$DOMAIN} automatically.
+# No access log is configured on purpose: OAuth codes travel in query strings.
+{$DOMAIN} {
+	encode gzip
+	reverse_proxy app:8080
+}
